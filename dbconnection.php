@@ -17,9 +17,9 @@ function createDbConnection(){
     return null;
 }
 
-function createSqliteConnection(){
+function createSqliteConnection($filename){
     try{
-        $dbcon = new PDO("sqlite:./chinook.db");
+        $dbcon = new PDO("sqlite:".$filename);
         return $dbcon;
     }catch(PDOException $e){
         echo $e->getMessage();
